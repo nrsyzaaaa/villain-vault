@@ -1,0 +1,502 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #09090d;
+    color: white;
+    line-height: 1.6;
+}
+
+:root {
+    --red: #ed1c2e;
+    --dark: #09090d;
+    --card: #17171f;
+    --grey: #b8b8c2;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #050508;
+    border-bottom: 2px solid var(--red);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span,
+footer span,
+h1 span,
+h2 span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--red);
+}
+
+.nav-button {
+    background: #ff1744;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: 1px solid #ff1744;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 8px #ff1744,
+        0 0 18px #ff1744,
+        0 0 35px #ff1744,
+        0 0 55px rgba(255, 23, 68, 0.8);
+
+    animation: rentGlow 0.7s ease-in-out infinite alternate;
+    transition: 0.3s ease;
+}
+
+@keyframes rentGlow {
+    from {
+        box-shadow:
+            0 0 5px #ff1744,
+            0 0 12px #ff1744,
+            0 0 20px rgba(255, 23, 68, 0.7);
+    }
+
+    to {
+        box-shadow:
+            0 0 12px #ff1744,
+            0 0 25px #ff1744,
+            0 0 45px #ff1744,
+            0 0 65px rgba(255, 23, 68, 0.9);
+    }
+}
+
+.nav-button:hover {
+    background: white;
+    color: #ff1744;
+
+    box-shadow:
+        0 0 15px white,
+        0 0 30px #ff1744,
+        0 0 60px #ff1744;
+
+    transform: scale(1.08);
+}
+
+/* HERO */
+.hero,
+.kiosk-hero {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    background:
+        linear-gradient(90deg, #09090df2, #09090d55),
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1600")
+        center/cover;
+    border-bottom: 2px solid var(--red);
+}
+
+.kiosk-hero {
+    min-height: 300px;
+}
+
+.hero-content h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.hero-content p {
+    color: var(--grey);
+}
+
+.small-title {
+    color: var(--red) !important;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.main-button,
+.submit-button {
+    display: inline-block;
+    margin-top: 25px;
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* GENERAL SECTION */
+.section-container {
+    padding: 55px 8%;
+}
+
+.section-container h2 {
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+/* FOUNDER */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border: 3px solid var(--red);
+    border-radius: 10px;
+}
+
+.profile-info h3 {
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+.profile-info p {
+    margin-bottom: 20px;
+}
+
+.introduction {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+/* PACKAGES */
+.package-section {
+    margin-bottom: 55px;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.package-card {
+    background: #100b12;
+    border: 1px solid #ff1744;
+    border-radius: 15px;
+    padding: 25px;
+
+    box-shadow:
+        0 0 5px #ff1744,
+        0 0 12px rgba(255, 23, 68, 0.6),
+        inset 0 0 10px rgba(255, 23, 68, 0.1);
+
+    transition: 0.3s ease;
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+.package-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 0 10px #ff1744,
+        0 0 25px #ff1744,
+        0 0 40px rgba(255, 23, 68, 0.7);
+}
+
+.package-card h3 {
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+.package-card h2 {
+    font-size: 25px;
+}
+
+.package-card h2 span {
+    font-size: 13px;
+    color: var(--grey);
+}
+
+.package-card p {
+    color: var(--grey);
+    margin: 10px 0;
+}
+
+.featured {
+    border: 2px solid var(--red);
+}
+
+/* FORM */
+.form-container {
+    background: var(--card);
+    padding: 35px;
+    border: 1px solid var(--red);
+    border-radius: 12px;
+}
+
+.form-container > p {
+    color: var(--grey);
+    margin-bottom: 25px;
+}
+
+#recommendationForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input:not([type="radio"]):not([type="checkbox"]) {
+    padding: 13px;
+    background: #292933;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form-group input:focus {
+    outline: 1px solid var(--red);
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.radio-group label,
+.checkbox-group label {
+    font-weight: normal;
+}
+
+.radio-group input,
+.checkbox-group input {
+    accent-color: var(--red);
+    margin-right: 5px;
+}
+
+.full-width,
+.submit-button {
+    grid-column: 1 / -1;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 0;
+}
+
+/* RESULT */
+.result-box {
+    margin-top: 30px;
+    padding: 25px;
+    background: #260d12;
+    border: 2px solid var(--red);
+    border-radius: 10px;
+}
+
+.result-box h2,
+.result-box h3 {
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+.result-box p {
+    margin: 8px 0;
+}
+
+/* RULES */
+.rules {
+    margin-top: 40px;
+    padding: 25px;
+    background: var(--card);
+    border-left: 4px solid var(--red);
+}
+
+.rules h3 {
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #050508;
+    text-align: center;
+    padding: 30px;
+    border-top: 2px solid var(--red);
+}
+
+footer p {
+    color: var(--grey);
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 18px 5%;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .profile-layout,
+    .package-grid,
+    #recommendationForm {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-photo img {
+        max-width: 300px;
+    }
+
+    .full-width,
+    .submit-button {
+        grid-column: auto;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .hero,
+    .kiosk-hero {
+        padding: 45px 6%;
+    }
+}
+
+/* FOUNDER HEADER */
+.founder-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)),
+        url("../images/founder-header.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* KIOSK HEADER */
+.kiosk-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)),
+        url("../images/kiosk-header.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.site-header {
+    min-height: 82px;
+    padding: 12px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #05050c;
+    border-bottom: 2px solid #a83cff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.logo strong {
+    display: block;
+    color: #d18aff;
+}
+
+
+/* CUSTOM RED VALIDATION */
+
+.error-message {
+    display: block;
+    color: #ff1744;
+    font-size: 13px;
+    margin-top: 6px;
+    text-shadow: 0 0 6px rgba(255, 23, 68, 0.5);
+}
+
+.input-error {
+    border: 1px solid #ff1744 !important;
+    box-shadow: 0 0 10px rgba(255, 23, 68, 0.6) !important;
+}
+
+.radio-error {
+    color: #ff1744;
+}
+
+/* FLOATING PACKAGE CARDS */
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Different animation timing */
+.package-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.package-card:nth-child(3) {
+    animation-delay: 1s;
+}
